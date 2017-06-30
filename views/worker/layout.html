@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>图书馆管理系统</title>
+	<link rel="stylesheet" type="text/css" href="/public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+	<!-- 导航部分 -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="javascript:;">图书馆管理系统</a>
+	    </div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav" id="workerbar" >
+			<li><a href="/worker">首页</a></li>
+		     <li><a href="/worker/lent_book">借阅图书</a></li>
+		     <li><a href="/worker/return_book">归还图书</a></li>
+		  	</ul>
+		 	<ul class="nav navbar-nav navbar-right">
+		     <li class="dropdown">
+		      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.username}}<span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+		        <li><a href="/logout">退出</a></li>
+		      </ul>
+		     </li>
+		    </ul>
+	    </div>
+	   </div>
+	</nav>
+	<div class="container">
+		{% block main %}{% endblock %}
+	</div>  		
+	<script src="/public/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>

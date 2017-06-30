@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<ol class="breadcrumb">
+    <li><a href="/admin">首页</a></li>
+    <li><a href="/admin/student">学生用户管理</a></li>
+    <li class="active">学生用户添加</li>
+</ol>
+
+<h3>学生用户添加</h3>
+
+<form role="form" method="post">
+    <div class="form-group">
+        <label for="username">用户名(必填*)</label>
+        <input type="text" value="" class="form-control" id="username" placeholder="请输入用户名" name="username">
+    </div>
+
+    <div class="form-group">
+        <label for="password">密码(必填*)</label>
+        <input type="text" value="" class="form-control" id="password" placeholder="请输入密码" name="password">
+    </div>
+
+    <div class="form-group">
+        <label for="tel">联系方式</label>
+        <input type="text" value="" class="form-control" id="tel" placeholder="请输入联系方式" name="tel">
+    </div>
+    
+    <div class="form-group">
+        <label for="level">等级</label>
+        <select name="level" id="level" class="form-control">
+            {%for level in levels%}
+                    <option value="{{level.id}}">{{level.leveltype}}</option>
+            {%endfor%}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default btn-primary">提交</button>
+</form>
+
+{% endblock %}
